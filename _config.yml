@@ -329,3 +329,8 @@ defaults:
 
 mathjax: true
 
+
+collections:
+  portfolio:        # 사용할 컬렉션 이름 (폴더 이름이 됨)
+    output: true    # 클릭하면 상세 페이지로 이동하게 만듦 (필수!)
+    permalink: /:collection/:path/

@@ -7,3 +7,37 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+/* --- 프로젝트 카드 디자인 커스텀 --- */
+
+/* 카드 전체 박스 디자인 */
+.archive__item {
+  background: #fff;               /* 배경색: 흰색 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 그림자 효과 */
+  border-radius: 8px;             /* 모서리 둥글게 */
+  padding: 15px;                  /* 내부 여백 */
+  margin-bottom: 20px;            /* 카드 간 간격 */
+  transition: transform 0.2s;     /* 마우스 올렸을 때 부드럽게 움직임 */
+}
+
+/* 마우스 올렸을 때 효과 */
+.archive__item:hover {
+  transform: translateY(-5px);    /* 살짝 위로 떠오름 */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 그림자 진해짐 */
+}
+
+/* 썸네일 이미지 꽉 차게 조절 */
+.archive__item-teaser img {
+  width: 100%;
+  height: 200px;        /* 높이 고정 (원하는 대로 조절 가능) */
+  object-fit: cover;    /* 비율 유지하면서 꽉 채우기 */
+  border-radius: 5px;   /* 이미지 모서리도 둥글게 */
+  margin-bottom: 10px;
+}
+
+/* 제목 크기 조절 */
+.archive__item-title {
+  margin-top: 0;
+  font-size: 1.2em;
+}

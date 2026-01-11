@@ -219,6 +219,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  math_engine: mathjax # 들여쓰기 맞춤춤
 
 
 # Sass/SCSS
@@ -325,3 +326,6 @@ defaults:
       comments: # true
       share: true
       related: true
+
+mathjax: true
+

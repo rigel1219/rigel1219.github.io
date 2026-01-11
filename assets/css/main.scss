@@ -51,16 +51,23 @@ search: false
 /* 화면 너비가 768px 이상일 때 (태블릿/데스크탑) 적용 */
 @media (min-width: 768px) {
   .grid__item {
-    /* 2개씩 배치 (너비 50%에서 간격을 뺀 만큼 설정) */
-    flex: 0 0 48%;
-    max-width: 48%;
-    /* 카드 사이 간격을 위해 오른쪽 마진 추가 (짝수 번째는 제외) */
-    margin-right: 4%;
-    margin-bottom: 30px; /* 아래쪽 간격도 조금 넓힘 */
+    /* [핵심] !important를 붙여서 테마 설정을 무시하고 강제로 적용 */
+    position: relative;
+    float: left;
+    width: 48% !important;      /* 너비를 절반 가까이 강제 */
+    margin-right: 4% !important; /* 오른쪽 여백 강제 */
+    margin-bottom: 30px;
+    clear: none !important;     /* 줄바꿈 꼬임 방지 */
   }
 
-  /* 매 줄의 마지막 카드(짝수 번째)는 오른쪽 마진 제거 */
+  /* 짝수 번째(2, 4, 6...) 카드는 오른쪽 여백을 없애서 딱 맞춤 */
   .grid__item:nth-child(2n) {
-    margin-right: 0;
+    margin-right: 0 !important;
+    clear: right !important;
+  }
+
+  /* 홀수 번째(1, 3, 5...) 카드는 새로운 줄에서 시작 */
+  .grid__item:nth-child(2n+1) {
+    clear: left !important;
   }
 }

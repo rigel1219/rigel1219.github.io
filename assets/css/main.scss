@@ -44,3 +44,23 @@ search: false
   margin-top: 0;
   font-size: 1.2em;
 }
+
+
+/* --- PC 화면에서 한 줄에 카드 2개 배치 --- */
+
+/* 화면 너비가 768px 이상일 때 (태블릿/데스크탑) 적용 */
+@media (min-width: 768px) {
+  .grid__item {
+    /* 2개씩 배치 (너비 50%에서 간격을 뺀 만큼 설정) */
+    flex: 0 0 48%;
+    max-width: 48%;
+    /* 카드 사이 간격을 위해 오른쪽 마진 추가 (짝수 번째는 제외) */
+    margin-right: 4%;
+    margin-bottom: 30px; /* 아래쪽 간격도 조금 넓힘 */
+  }
+
+  /* 매 줄의 마지막 카드(짝수 번째)는 오른쪽 마진 제거 */
+  .grid__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}

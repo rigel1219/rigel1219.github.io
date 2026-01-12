@@ -111,9 +111,9 @@ analytics:
     anonymize_ip         : # true, false (default)
 
 
-# Site Author
+# Site Author # 왼쪽 바 설정
 author:
-  name             : "Your Name"
+  name             : "조동우"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
   location         : "Somewhere"

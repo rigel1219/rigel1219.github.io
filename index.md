@@ -24,11 +24,11 @@ classes: wide      # 화면을 넓게 보여줌
       </li>
       <li>
         <i class="fab fa-github" style="width: 25px; color: #555;"></i> 
-        <a href="https://github.com/본인아이디" target="_blank" style="text-decoration: none; color: #333;">github.com/본인아이디</a>
+        <a href="https://github.com/rigel1219" target="_blank" style="text-decoration: none; color: #333;">github.com/rigel1219</a>
       </li>
       <li>
         <i class="fas fa-envelope" style="width: 25px; color: #555;"></i> 
-        <a href="mailto:이메일주소" style="text-decoration: none; color: #333;">이메일주소@gmail.com</a>
+        <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333;">12200623@inha.edu@gmail.com</a>
       </li>
       <li>
         <i class="fab fa-instagram" style="width: 25px; color: #555;"></i> 
@@ -42,24 +42,27 @@ classes: wide      # 화면을 넓게 보여줌
 
 <h2 style="margin-top: 40px; margin-bottom: 20px;">Recent Projects</h2>
 
-<div class="grid__wrapper">
+<div style="width: 100%; display: block;">
   {% for post in site.portfolio limit:2 %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
 
-<h2 style="margin-top: 40px; margin-bottom: 20px;">Recent Posts</h2>
+<div style="clear: both; margin-bottom: 30px;"></div>
+
+
+<h2 style="margin-top: 40px; margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 40px;">Recent Posts</h2>
 
 <div class="list__item">
   {% for post in site.posts limit:4 %}
-    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-      <h3 class="archive__item-title no_toc" itemprop="headline">
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" style="margin-bottom: 20px;">
+      <h3 class="archive__item-title no_toc" itemprop="headline" style="margin-top: 0; font-size: 1.3em;">
+        <a href="{{ post.url | relative_url }}" rel="permalink" style="text-decoration: none; color: #333;">{{ post.title }}</a>
       </h3>
-      <p class="page__meta">
+      <p class="page__meta" style="font-size: 0.8em; color: #888; margin-bottom: 5px;">
         <i class="far fa-clock" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}
       </p>
-      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      <p class="archive__item-excerpt" itemprop="description" style="font-size: 0.95em; color: #666;">{{ post.excerpt | strip_html | truncate: 100 }}</p>
     </article>
   {% endfor %}
 </div>

@@ -20,7 +20,7 @@ classes: wide      # 화면을 넓게 보여줌
     <ul style="list-style: none; padding: 0; font-size: 1.05em; line-height: 1.8;">
       <li>
         <i class="fas fa-map-marker-alt" style="width: 25px; color: #555;"></i> 
-        Busan, Korea
+        36, Gaetbeol-ro, Yeonsu-gu, Incheon, Republic of Korea
       </li>
       <li>
         <i class="fab fa-github" style="width: 25px; color: #555;"></i> 
@@ -28,7 +28,7 @@ classes: wide      # 화면을 넓게 보여줌
       </li>
       <li>
         <i class="fas fa-envelope" style="width: 25px; color: #555;"></i> 
-        <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333;">12200623@inha.edu@gmail.com</a>
+        <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333;">12200623@inha.edu</a>
       </li>
       <li>
         <i class="fab fa-instagram" style="width: 25px; color: #555;"></i> 

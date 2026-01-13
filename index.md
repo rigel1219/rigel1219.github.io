@@ -36,7 +36,7 @@ classes: wide      # 화면을 넓게 보여줌
     
     <li>
       <i class="fas fa-map-marker-alt" style="width: 25px; text-align: center; color: #555; margin-right: 10px;"></i> 
-      <a href="https://maps.app.goo.gl/n4ZWr1iScauUdbyx7" target="_blank" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">
+      <a href="https://maps.app.goo.gl/AcwWGugqCQNRc8zk9" target="_blank" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">
         Incheon, Korea
       </a>
     </li>

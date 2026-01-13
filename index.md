@@ -48,7 +48,7 @@ classes: wide      # 화면을 넓게 보여줌
 
     <li>
       <i class="fas fa-envelope" style="width: 25px; text-align: center; color: #555; margin-right: 10px;"></i> 
-      <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">Email</a>
+      <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">12200623@inha.edu</a>
     </li>
 
     <li>

@@ -31,8 +31,8 @@ classes: wide      # 화면을 넓게 보여줌
         <a href="mailto:12200623@inha.edu" style="text-decoration: none; color: #333;">12200623@inha.edu</a>
       </li>
       <li>
-        <i class="fab fa-instagram" style="width: 25px; color: #555;"></i> 
-        <a href="https://instagram.com/아이디" target="_blank" style="text-decoration: none; color: #333;">@instagram_id</a>
+        <i class="fab fa-Linkedin" style="width: 25px; color: #555;"></i> 
+        <a href="https://www.linkedin.com/in/%EB%8F%99%EC%9A%B0-%EC%A1%B0-730312356/" target="_blank" style="text-decoration: none; color: #333;">https://www.linkedin.com/in/%EB%8F%99%EC%9A%B0-%EC%A1%B0-730312356/</a>
       </li>
     </ul>
   </div>

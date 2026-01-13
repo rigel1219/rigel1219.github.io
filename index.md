@@ -4,6 +4,8 @@ title: ""          # 제목을 비워둬야 커스텀 디자인이 더 예쁩니
 author_profile: false  # 왼쪽 사이드바 제거
 permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 등 설정)
 classes: wide      # 화면을 넓게 보여줌
+sidebar:
+  nav: false
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin-top: 20px;">

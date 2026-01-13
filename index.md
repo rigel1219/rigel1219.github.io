@@ -35,6 +35,7 @@ classes: wide      # 화면을 넓게 보여줌
     </div>
 
     <div style="font-size: 1.05em;">
+      <h3 style="margin-bottom: 10px; font-size: 1.2em; border-bottom: 2px solid #eee; padding-bottom: 5px;">Contact</h3>
       <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
         
         <li>

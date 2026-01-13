@@ -24,7 +24,7 @@ classes: wide      # 화면을 넓게 보여줌
       </li>
       <li>
         <i class="fab fa-github" style="width: 25px; color: #555;"></i> 
-        <a href="https://github.com/rigel1219" target="_blank" style="text-decoration: none; color: #333;">github.com/rigel1219</a>
+        <a href="https://github.com/rigel1219" target="_blank" style="text-decoration: none; color: #333;">GitHub</a>
       </li>
       <li>
         <i class="fas fa-envelope" style="width: 25px; color: #555;"></i> 

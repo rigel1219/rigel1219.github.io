@@ -15,7 +15,7 @@ classes: wide      # 화면을 넓게 보여줌
   
   <div style="flex: 1; min-width: 300px;">
     
-    <h1 style="margin-top: 0; font-size: 2.2em; margin-bottom: 10px;">Jun (Your Name)</h1>
+    <h1 style="margin-top: 0; font-size: 2.2em; margin-bottom: 10px;">조동우</h1>
     <p style="font-size: 1.1em; color: #666; margin-bottom: 25px;">
       소개글1.<br>
       소개글2
@@ -36,7 +36,7 @@ classes: wide      # 화면을 넓게 보여줌
     
     <li>
       <i class="fas fa-map-marker-alt" style="width: 25px; text-align: center; color: #555; margin-right: 10px;"></i> 
-      <a href="https://www.google.com/maps/search/?api=1&query=36+Gaetbeol-ro+Yeonsu-gu+Incheon" target="_blank" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">
+      <a href="https://maps.app.goo.gl/n4ZWr1iScauUdbyx7" target="_blank" style="text-decoration: none; color: #333; border-bottom: 1px dotted #999;">
         Incheon, Korea
       </a>
     </li>

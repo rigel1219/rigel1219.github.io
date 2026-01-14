@@ -64,8 +64,8 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
 <h2 style="margin-top: 40px; margin-bottom: 20px;">Recent Projects</h2>
 
 <div style="width: 100%; display: block;">
-  
-  {% for post in site.portfolio limit:3 %} <div class="home-grid-item">
+  {% for post in site.portfolio limit:3 %}
+    <div class="home-grid-item">
       <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
         
         {% if post.header.teaser %}
@@ -74,7 +74,7 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
           </div>
         {% endif %}
         
-        <div style="padding: 15px;">
+        <div class="archive__item-body" style="padding: 15px;">
           <h3 class="archive__item-title" itemprop="headline" style="margin-top: 0; margin-bottom: 10px;">
             <a href="{{ post.url | relative_url }}" rel="permalink" style="text-decoration: none; color: #333;">{{ post.title }}</a>
           </h3>
@@ -85,7 +85,27 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
         
       </article>
     </div>
+  {% endfor %}
+</div>
 
+<div style="clear: both; margin-bottom: 50px;"></div>
+
+
+<h2 style="margin-top: 40px; margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 40px;">Recent Posts</h2>
+
+<div class="list__item">
+  {% for post in site.posts limit:4 %}
+    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" style="margin-bottom: 20px;">
+      <h3 class="archive__item-title no_toc" itemprop="headline" style="margin-top: 0; font-size: 1.3em;">
+        <a href="{{ post.url | relative_url }}" rel="permalink" style="text-decoration: none; color: #333;">{{ post.title }}</a>
+      </h3>
+      <p class="page__meta" style="font-size: 0.8em; color: #888; margin-bottom: 5px;">
+        <i class="far fa-clock" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}
+      </p>
+      <p class="archive__item-excerpt" itemprop="description" style="font-size: 0.95em; color: #666;">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+    </article>
+  {% endfor %}
+</div>
   {% endfor %}
 
 </div>

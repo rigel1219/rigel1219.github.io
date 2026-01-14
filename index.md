@@ -29,7 +29,10 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
       </ul>
     </div>
 
-  </div> </div> <div style="margin-top: 40px; margin-bottom: 60px;">
+  </div> 
+</div> 
+
+<div style="margin-top: 40px; margin-bottom: 60px;">
   <h3 style="margin-bottom: 15px; font-size: 1.2em; border-bottom: 2px solid #eee; padding-bottom: 5px; color: #333;">Contact</h3>
   
   <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; line-height: 2.0;">
@@ -106,7 +109,3 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
     </article>
   {% endfor %}
 </div>
-  {% endfor %}
-
-</div>
-<div style="clear: both; margin-bottom: 50px;"></div>

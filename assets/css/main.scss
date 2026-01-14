@@ -9,67 +9,135 @@ search: false
 @import "minimal-mistakes"; // main partials
 
 
-/* --- 프로젝트 카드 디자인 커스텀 --- */
+/* ==========================================================================
+   커스텀 CSS: 카드 디자인 및 페이지별 배치 설정 (통합본)
+   ========================================================================== */
 
-/* 카드 전체 박스 디자인 */
+/* --------------------------------------------------------------------------
+   1. [공통] 모든 카드의 기본 디자인 (박스 모양, 그림자)
+   -------------------------------------------------------------------------- */
 .archive__item {
-  background: #fff;               /* 배경색: 흰색 */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 그림자 효과 */
-  border-radius: 8px;             /* 모서리 둥글게 */
-  padding: 15px;                  /* 내부 여백 */
-  margin-bottom: 20px;            /* 카드 간 간격 */
-  transition: transform 0.2s;     /* 마우스 올렸을 때 부드럽게 움직임 */
+  background: #fff;               /* 카드 배경색: 흰색 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 기본 그림자 (연하게) */
+  border-radius: 10px;            /* 모서리를 둥글게 (10px) */
+  padding: 0;                     /* 내부 여백 제거 (이미지를 끝까지 채우기 위함) */
+  overflow: hidden;               /* 내용이 둥근 모서리를 튀어나가지 않게 자름 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 마우스 올렸을 때 부드럽게 변환 */
+  height: 100%;                   /* 카드 높이를 부모 요소에 맞춤 */
+  border: 1px solid #eee;         /* 얇은 회색 테두리 추가 (깔끔함) */
 }
 
-/* 마우스 올렸을 때 효과 */
+/* 마우스를 카드 위에 올렸을 때(Hover) 효과 */
 .archive__item:hover {
-  transform: translateY(-5px);    /* 살짝 위로 떠오름 */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 그림자 진해짐 */
+  transform: translateY(-5px);    /* 카드가 5px 위로 떠오름 */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* 그림자가 진해지고 넓어짐 (입체감) */
 }
 
-/* 썸네일 이미지 꽉 차게 조절 */
-.archive__item-teaser img {
-  width: 100% !important;      /* 너비는 카드에 꽉 차게 */
-  height: auto !important;     /* [핵심] 높이는 비율에 맞춰 자동으로 조절 */
-  object-fit: contain !important; /* [핵심] 이미지 비율 유지하며 전체 보여주기 */
-  border-radius: 8px 8px 0 0;  /* 카드의 둥근 모서리에 맞춤 */
-  margin-bottom: 0 !important; /* 이미지 아래 여백 제거 */
-}
-
-/* 썸네일 감싸는 박스의 여백도 제거 */
-.archive__item-teaser {
-    margin-bottom: 15px !important;
-}
-
-/* 제목 크기 조절 */
-.archive__item-title {
-  margin-top: 0;
-  font-size: 1.2em;
+/* 카드 내부 텍스트(제목, 설명)의 여백 설정 */
+.archive__item-body {
+  padding: 15px;                  /* 글자가 테두리에 너무 붙지 않게 여백 줌 */
 }
 
 
-/* --- PC 화면에서 한 줄에 카드 2개 배치 --- */
+/* --------------------------------------------------------------------------
+   2. [Projects 페이지] 설정: 한 줄에 2개씩 배치 (크고 자세하게)
+   대상 클래스: .grid__item (Minimal Mistakes 기본 클래스)
+   -------------------------------------------------------------------------- */
 
-/* 화면 너비가 768px 이상일 때 (태블릿/데스크탑) 적용 */
-@media (min-width: 768px) {
+/* PC 화면(1024px 이상)일 때만 적용 */
+@media (min-width: 1024px) {
   .grid__item {
-    /* [핵심] !important를 붙여서 테마 설정을 무시하고 강제로 적용 */
-    position: relative;
-    float: left;
-    width: 48% !important;      /* 너비를 절반 가까이 강제 */
-    margin-right: 4% !important; /* 오른쪽 여백 강제 */
-    margin-bottom: 30px;
-    clear: none !important;     /* 줄바꿈 꼬임 방지 */
+    width: 48% !important;        /* 너비를 화면의 절반(48%)으로 강제 설정 */
+    float: left;                  /* 왼쪽부터 차례대로 나열 */
+    margin-right: 4% !important;  /* 카드 사이의 오른쪽 간격 (4%) */
+    margin-bottom: 40px;          /* 아래쪽 간격 */
+    clear: none !important;       /* 줄바꿈 꼬임 방지 */
   }
 
-  /* 짝수 번째(2, 4, 6...) 카드는 오른쪽 여백을 없애서 딱 맞춤 */
+  /* 짝수 번째(2, 4...) 카드는 오른쪽 여백 제거 (줄의 끝이니까) */
   .grid__item:nth-child(2n) {
     margin-right: 0 !important;
     clear: right !important;
   }
 
-  /* 홀수 번째(1, 3, 5...) 카드는 새로운 줄에서 시작 */
+  /* 홀수 번째(1, 3...) 카드는 왼쪽 줄바꿈 초기화 (새 줄 시작) */
   .grid__item:nth-child(2n+1) {
     clear: left !important;
   }
+}
+
+/* [Projects 이미지] 원본 비율 유지 (contain) */
+/* 상세 페이지이므로 이미지가 잘리면 안 됨 -> 여백이 생기더라도 다 보여줌 */
+.grid__item .archive__item-teaser img {
+  width: 100%;                    /* 가로 꽉 채움 */
+  height: 250px;                  /* 높이 고정 (통일감 위해) */
+  object-fit: contain;            /* [핵심] 이미지 비율 유지하며 다 보여주기 */
+  background: #f9f9f9;            /* 이미지 비율 때문에 생기는 빈 공간은 연회색 처리 */
+  margin-bottom: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. [About 페이지] 설정: 한 줄에 3개씩 배치 (작고 컴팩트하게)
+   대상 클래스: .home-grid-item (우리가 새로 만든 클래스)
+   -------------------------------------------------------------------------- */
+
+/* PC 화면(1024px 이상)일 때만 적용 */
+@media (min-width: 1024px) {
+  .home-grid-item {
+    width: 31% !important;        /* 너비를 화면의 1/3 수준(31%)으로 설정 */
+    float: left;                  /* 왼쪽 정렬 */
+    margin-right: 3.5% !important;/* 카드 사이 간격 (3.5%) */
+    margin-bottom: 30px;          /* 아래쪽 간격 */
+  }
+
+  /* 3의 배수(3, 6, 9...) 번째 카드는 오른쪽 여백 제거 (줄의 끝) */
+  .home-grid-item:nth-child(3n) {
+    margin-right: 0 !important;
+    clear: right !important;
+  }
+
+  /* 새 줄의 첫 번째 카드(1, 4, 7...)는 줄바꿈 초기화 */
+  .home-grid-item:nth-child(3n+1) {
+    clear: left !important;
+  }
+}
+
+/* [About 이미지] 꽉 채우기 (cover) */
+/* 요약용이므로 이미지가 꽉 차서 예뻐 보이는 게 중요 -> 위아래 조금 잘려도 됨 */
+.home-grid-item .archive__item-teaser img {
+  width: 100%;
+  height: 180px;                  /* 카드가 작으니 이미지 높이도 180px로 줄임 */
+  object-fit: cover;              /* [핵심] 빈틈없이 꽉 채우기 (Cropping 발생) */
+  margin-bottom: 0;
+}
+
+/* About 페이지에서는 제목 글자 크기를 조금 줄여서 밸런스 맞춤 */
+.home-grid-item .archive__item-title {
+  font-size: 1em;                 
+}
+
+
+/* --------------------------------------------------------------------------
+   4. 기타 텍스트 스타일 수정
+   -------------------------------------------------------------------------- */
+
+/* 카드 제목 스타일 */
+.archive__item-title {
+  margin-top: 0;
+  font-size: 1.15em;              /* 제목 크기 적당히 */
+  font-weight: bold;              /* 굵게 */
+}
+
+/* 카드 본문(요약글) 스타일 */
+.archive__item-excerpt {
+  font-size: 0.9em;               /* 본문은 조금 작게 */
+  color: #666;                    /* 회색으로 처리 */
+  margin-top: 5px;
+}
+
+/* 날짜 등 메타 정보 스타일 */
+.page__meta {
+  font-size: 0.8em !important;
+  color: #888;
 }

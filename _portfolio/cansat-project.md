@@ -1,6 +1,6 @@
 ---
 title: "달 탐사 로버 무한주행 장치"
-excerpt: "강화학습을 이용한 트레드밀 위 로버 자율 주행 제어 프로젝트입니다."
+excerpt: "American Astronautical Society에서 주관하는 CANSAT COMTETITION에 참가하는 프로젝트입니다."
 layout: single # 테마 적용
 auther_profile: true # true: 왼쪽에 프로필 띄움
 header:

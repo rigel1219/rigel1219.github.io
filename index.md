@@ -10,7 +10,7 @@ permalink: /       # 메인 페이지로 쓸 경우 (About 메뉴라면 /about/ 
   
   <div style="flex-shrink: 0;">
     <img src="/assets/images/profile.jpg" alt="프로필 사진" 
-         style="width: 250px; height: 250px; border-radius: 20px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+         style="width: 250px; height: 350px; border-radius: 20px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
   </div>
   
   <div style="flex: 1; min-width: 300px;">

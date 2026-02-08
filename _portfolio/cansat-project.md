@@ -41,9 +41,8 @@ project_images:
   /* 1. 배경 이미지 넓게 보이기 설정 */
   .page__hero--overlay {
     min-height: 600px !important;       /* 헤더 높이를 강제로 600px로 늘림 (숫자 조절 가능) */
-    align-items: center !important;     /* 텍스트를 세로 중앙에 정렬 */
     display: flex !important;
-    background-position: center bottom !important; /* 이미지 위치 조절 (필요시 center center로 변경) */
+    background-position: Top center !important; /* 이미지 위치 조절 (필요시 center center로 변경) */
   }
 
   /* 2. 헤더 타이틀 너비 제한 해제 */
@@ -231,7 +230,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 <br>
 <br>
 
-## 트러블슈팅 (Troubleshooting & Engineering Insights)
+## Troubleshooting & Engineering Insights
 
 최종 비행(Flight) 미션은 절반의 성공과 절반의 실패를 남겼습니다. 하지만 이 과정에서 발생한 기계적, 전자적 결함을 분석하며 엔지니어로서 가장 많이 성장할 수 있었습니다.
 

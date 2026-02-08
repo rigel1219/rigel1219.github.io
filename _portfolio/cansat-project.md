@@ -174,8 +174,6 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
   * **Telemetry Loss:** 비행 중 지상국(GCS)과의 실시간 데이터 통신이 끊겼습니다.
   * **Deployment Failure:** 낙하산 모듈 파손으로 인해 감속 시스템이 정상적으로 전개되지 않았고, 이로 인해 Heat Shield 분리 시퀀스가 실패했습니다.
 
----
-
 ### 2. Failure Analysis & Corrective Actions
 가장 치명적이었던 두 가지 문제에 대한 **근본 원인 분석**과 **개선책**입니다.
 
@@ -195,8 +193,6 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
   1. **Antenna Alignment:** 지향성 패널 안테나를 사용했으나, 육안으로 빠르게 움직이는 캔위성을 정확히 조준(Aiming)하는 데 실패했습니다.
 * **기술적 개선안 (Solution)**
   * **Antenna Scope:** 안테나에 조준경(Scope) 부착하여 시각적 추적의 정확도를 높이고, 지향각 오차를 최소화합니다.
-
----
 
 ### 3. Lessons Learned
 1. **Aerodynamic Forces:** 중량 제한에만 집중한 나머지 구조 안정성을 충분히 고려하지 못하였고, 그 결과 공력과 사출 충격에 의해 위성이 파손되었습니다. 이를 통해 설계 시 **구조적 안전율(Safety Factor)을 보수적으로 적용**해야 함을 배웠습니다.

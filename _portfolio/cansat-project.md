@@ -9,7 +9,7 @@ header:
   overlay_filter: 0.5 # 배경 이미지 어둡게 처리
 toc: true
 toc_sticky: true
-classes:: wide
+classes: wide
 sidebar:
   nav: "counts" # (선택사항) 왼쪽 메뉴
 categories:

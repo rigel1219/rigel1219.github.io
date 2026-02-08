@@ -1,8 +1,7 @@
 ---
 title: "2024 AAS CanSat Competition"
 excerpt: |
-  American Astronautical Society(AAS) 주관
-  캔위성 경연대회 하드웨어 설계 및 제작 프로젝트
+  American Astronautical Society(AAS) 주관 캔위성 경연대회 하드웨어 설계 및 제작 프로젝트
 layout: single
 author_profile: true
 header:
@@ -45,7 +44,7 @@ project_images:
     min-height: 80vh !important;       /* 화면 높이의 80%까지 늘려서 세로 사진 확보 */
     align-items: center !important;     /* 텍스트 세로 중앙 정렬 */
     display: flex !important;
-    background-position: center bottom !important; /* 이미지 아래쪽(발사대) 기준 정렬 */
+    background-position: center center !important; /* 이미지 아래쪽(발사대) 기준 정렬 */
     background-size: cover !important;
   }
 
@@ -70,7 +69,7 @@ project_images:
     word-break: keep-all !important;    /* 단어 중간 끊김 방지 */
     white-space: pre-line !important;   /* [중요] YAML에서 엔터 친 그대로 줄바꿈 반영 */
     line-height: 1.6 !important;
-    text-align: center;                 /* 텍스트는 중앙 정렬 (원치 않으면 left로 변경 가능) */
+    text-align: left;                 /* 텍스트는 중앙 정렬 (원치 않으면 left로 변경 가능) */
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
   }
 

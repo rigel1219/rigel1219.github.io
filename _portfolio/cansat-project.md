@@ -38,21 +38,44 @@ project_images:
 ---
 
 <style>
-  /* 헤더 타이틀 너비 제한 해제 */
+  /* 1. 배경 이미지 넓게 보이기 설정 */
+  .page__hero--overlay {
+    min-height: 600px !important;       /* 헤더 높이를 강제로 600px로 늘림 (숫자 조절 가능) */
+    align-items: center !important;     /* 텍스트를 세로 중앙에 정렬 */
+    display: flex !important;
+    background-position: center bottom !important; /* 이미지 위치 조절 (필요시 center center로 변경) */
+  }
+
+  /* 2. 헤더 타이틀 너비 제한 해제 */
   .page__hero--overlay .wrapper {
     max-width: 95% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
   .page__title {
-    font-size: 2.5em !important;
+    font-size: 3em !important;          /* 제목 크기 키움 */
     line-height: 1.2;
-    white-space: nowrap; /* PC에서 줄바꿈 방지 */
+    margin-bottom: 20px !important;
   }
+
+  /* 3. 설명글(excerpt) 단어 끊김 방지 */
+  .page__lead {
+    font-size: 1.5em !important;        /* 설명글 크기 키움 */
+    word-break: keep-all !important;    /* [중요] 한글 단어 중간에서 줄바꿈 금지 */
+    line-height: 1.6 !important;
+    max-width: 800px;                   /* 설명글이 너무 퍼지지 않게 중앙 정렬 느낌 유지 */
+    margin: 0 auto;                     /* 중앙 정렬 */
+  }
+
   @media (max-width: 768px) {
+    .page__hero--overlay {
+      min-height: 400px !important;     /* 모바일에서는 높이를 조금 줄임 */
+    }
     .page__title {
-      white-space: normal; /* 모바일에서는 줄바꿈 허용 */
-      font-size: 1.8em !important;
+      font-size: 2em !important;
+    }
+    .page__lead {
+      font-size: 1.1em !important;
     }
   }
 
@@ -169,45 +192,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 <br>
 
-## Troubleshooting & Engineering Insights
-
-최종 비행(Flight) 미션은 절반의 성공과 절반의 실패를 남겼습니다. 하지만 이 과정에서 발생한 기계적, 전자적 결함을 분석하며 엔지니어로서 가장 많이 성장할 수 있었습니다.
-
-### 1. Mission Result Overview
-* **성공 (Success)**
-  * **Payload Protection:** 낙하산 전개 실패로 인한 빠른 추락 속도에도 불구하고, **Egg Container의 충격 흡수 설계가 완벽하게 작동하여 달걀이 깨지지 않고 회수**되었습니다.
-  * **Data Recovery:** 온보드 메모리(SD Card)를 통해 비행 영상과 로그 데이터를 확보하여 사후 분석을 수행할 수 있었습니다.
-* **실패 (Failure)**
-  * **Telemetry Loss:** 비행 중 지상국(GCS)과의 실시간 데이터 통신이 끊겼습니다.
-  * **Deployment Failure:** 낙하산 모듈 파손으로 인해 감속 시스템이 정상적으로 전개되지 않았고, 이로 인해 Heat Shield 분리 시퀀스가 실패했습니다.
-
-### 2. Failure Analysis & Corrective Actions
-가장 치명적이었던 두 가지 문제에 대한 **원인 분석**과 **개선책**입니다.
-
-* **Issue 1: 낙하산 조기 전개 및 구조적 파손**
-  
-  **문제 상황:** 로켓에서 위성 사출 시 폭약의 충격을 견디지 못하고 낙하산 구조물이 파손되었습니다. 이로 인해 낙하산이 예정된 고도보다 일찍 전개되었으며, 완전한 낙하산 전개에 실패했습니다.
-  * **원인 분석 (Root Cause):**
-    1. **구조 설계의 문제:** 위성의 중량 제한(900g)을 준수하기 위해 구조물을 경량화하는 과정에서 낙하산 모듈의 강성이 약해져 충격에 취약해졌습니다.
-    2. **소재 선정의 한계:** PLA/ABS 등 일반적인 3D 프린팅 소재는 비강도(Specific Strength)가 낮아 순간적인 발사 충격을 견디기에 부족했습니다.
-  * **기술적 개선안 (Solution):**
-    * **Advanced Materials:** 하중을 집중적으로 받는 주요 부품은 **Carbon Composite**나 **발사 나무(Balsa Wood)**와 같이 가볍지만 강성이 뛰어난 소재로 변경하여 내구성을 확보해야 합니다.
-
-* **Issue 2: 통신 두절 (Telemetry Lost)**
-  
-  **문제 상황:** 발사 직후 지상국(Ground Station)으로 들어오는 패킷이 끊겼으며, 비행 데이터를 실시간으로 확인할 수 없었습니다.
-  * **원인 분석 (Root Cause):**
-    1. **Antenna Alignment:** 지향성 패널 안테나를 사용했으나, 육안으로 빠르게 움직이는 캔위성을 정확히 조준(Aiming)하는 데 실패했습니다.
-  * **기술적 개선안 (Solution):**
-    * **Antenna Scope:** 안테나에 조준경(Scope) 부착하여 시각적 추적의 정확도를 높이고, 지향각 오차를 최소화합니다.
-
-### 3. Lessons Learned
-1. **Aerodynamic Forces:** 중량 제한에만 집중한 나머지 구조 안정성을 충분히 고려하지 못하였고, 그 결과 공력과 사출 충격에 의해 위성이 파손되었습니다. 이를 통해 설계 시 **구조적 안전율(Safety Factor)을 보수적으로 적용**해야 함을 배웠습니다.
-2. **Fail-Safe Design:** 1차 시스템(낙하산)이 실패했을 때를 대비한 백업 시스템이 부족했습니다. 낙하산 모듈의 파손이 곧 다른 파트의 연쇄적인 실패로 이어지는 것을 보며, **Fail-Safe를 고려한 시스템 설계의 중요성**을 깨달았습니다.
-
-<br>
-
-## 프로젝트 자료 다운로드
+#### 프로젝트 자료 다운로드
 설계 및 심사 과정에서 작성한 기술 문서입니다.
 
 <div class="download-grid">
@@ -245,3 +230,39 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 <br>
 <br>
+
+## 트러블슈팅 (Troubleshooting & Engineering Insights)
+
+최종 비행(Flight) 미션은 절반의 성공과 절반의 실패를 남겼습니다. 하지만 이 과정에서 발생한 기계적, 전자적 결함을 분석하며 엔지니어로서 가장 많이 성장할 수 있었습니다.
+
+### 1. Mission Result Overview
+* **성공 (Success)**
+  * **Payload Protection:** 낙하산 전개 실패로 인한 빠른 추락 속도에도 불구하고, **Egg Container의 충격 흡수 설계가 완벽하게 작동하여 달걀이 깨지지 않고 회수**되었습니다.
+  * **Data Recovery:** 온보드 메모리(SD Card)를 통해 비행 영상과 로그 데이터를 확보하여 사후 분석을 수행할 수 있었습니다.
+* **실패 (Failure)**
+  * **Telemetry Loss:** 비행 중 지상국(GCS)과의 실시간 데이터 통신이 끊겼습니다.
+  * **Deployment Failure:** 낙하산 모듈 파손으로 인해 감속 시스템이 정상적으로 전개되지 않았고, 이로 인해 Heat Shield 분리 시퀀스가 실패했습니다.
+
+### 2. Failure Analysis & Corrective Actions
+가장 치명적이었던 두 가지 문제에 대한 **원인 분석**과 **개선책**입니다.
+
+* **Issue 1: 낙하산 조기 전개 및 구조적 파손**
+  
+  **문제 상황:** 로켓에서 위성 사출 시 폭약의 충격을 견디지 못하고 낙하산 구조물이 파손되었습니다. 이로 인해 낙하산이 예정된 고도보다 일찍 전개되었으며, 완전한 낙하산 전개에 실패했습니다.
+  * **원인 분석 (Root Cause):**
+    1. **구조 설계의 문제:** 위성의 중량 제한(900g)을 준수하기 위해 구조물을 경량화하는 과정에서 낙하산 모듈의 강성이 약해져 충격에 취약해졌습니다.
+    2. **소재 선정의 한계:** PLA/ABS 등 일반적인 3D 프린팅 소재는 비강도(Specific Strength)가 낮아 순간적인 발사 충격을 견디기에 부족했습니다.
+  * **기술적 개선안 (Solution):**
+    * **Advanced Materials:** 하중을 집중적으로 받는 주요 부품은 **Carbon Composite**나 **발사 나무(Balsa Wood)**와 같이 가볍지만 강성이 뛰어난 소재로 변경하여 내구성을 확보해야 합니다.
+
+* **Issue 2: 통신 두절 (Telemetry Lost)**
+  
+  **문제 상황:** 발사 직후 지상국(Ground Station)으로 들어오는 패킷이 끊겼으며, 비행 데이터를 실시간으로 확인할 수 없었습니다.
+  * **원인 분석 (Root Cause):**
+    1. **Antenna Alignment:** 지향성 패널 안테나를 사용했으나, 육안으로 빠르게 움직이는 캔위성을 정확히 조준(Aiming)하는 데 실패했습니다.
+  * **기술적 개선안 (Solution):**
+    * **Antenna Scope:** 안테나에 조준경(Scope) 부착하여 시각적 추적의 정확도를 높이고, 지향각 오차를 최소화합니다.
+
+### 3. Lessons Learned
+1. **Aerodynamic Forces:** 중량 제한에만 집중한 나머지 구조 안정성을 충분히 고려하지 못하였고, 그 결과 공력과 사출 충격에 의해 위성이 파손되었습니다. 이를 통해 설계 시 **구조적 안전율(Safety Factor)을 보수적으로 적용**해야 함을 배웠습니다.
+2. **Fail-Safe Design:** 1차 시스템(낙하산)이 실패했을 때를 대비한 백업 시스템이 부족했습니다. 낙하산 모듈의 파손이 곧 다른 파트의 연쇄적인 실패로 이어지는 것을 보며, **Fail-Safe를 고려한 시스템 설계의 중요성**을 깨달았습니다.

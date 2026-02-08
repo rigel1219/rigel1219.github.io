@@ -9,6 +9,7 @@ header:
   overlay_filter: 0.5 # 배경 이미지 어둡게 처리
 toc: true
 toc_sticky: true
+classes:: wide
 sidebar:
   nav: "counts" # (선택사항) 왼쪽 메뉴
 categories:
@@ -177,7 +178,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 ### 2. Failure Analysis & Corrective Actions
 가장 치명적이었던 두 가지 문제에 대한 **근본 원인 분석**과 **개선책**입니다.
 
-#### **Issue 1: 낙하산 조기 전개 및 구조적 파손**
+* **Issue 1: 낙하산 조기 전개 및 구조적 파손**
 **문제 상황:** 로켓에서 위성 사출 시 폭약의 충격을 견디지 못하고 낙하산 구조물이 파손되었습니다. 이로 인해 낙하산이 예정된 고도보다 일찍 전개되었으며, 완전한 낙하산 전개에 실패했습니다.
 
 * **원인 분석 (Root Cause)**
@@ -186,7 +187,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 * **기술적 개선안 (Solution)**
   * **Advanced Materials:** 하중을 집중적으로 받는 주요 부품은 **Carbon Composite**나 **발사 나무(Balsa Wood)**와 같이 가볍지만 강성이 뛰어난 소재로 변경하여 내구성을 확보해야 합니다.
 
-#### **Issue 2: 통신 두절 (Telemetry Lost)**
+* **Issue 2: 통신 두절 (Telemetry Lost)**
 **문제 상황:** 발사 직후 지상국(Ground Station)으로 들어오는 패킷이 끊겼으며, 비행 데이터를 실시간으로 확인할 수 없었습니다.
 
 * **원인 분석 (Root Cause)**

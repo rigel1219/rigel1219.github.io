@@ -173,6 +173,8 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 <span style="margin-top: 10px; font-weight: bold; color: #d9534f;">📄 우주학술대회 포스터</span>
 </div>
 </div>
+<br>
+<br>
 
 <br>
 ## Troubleshooting & Engineering Insights

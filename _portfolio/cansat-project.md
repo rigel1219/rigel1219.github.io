@@ -38,22 +38,53 @@ project_images:
 ---
 
 <style>
-  /* 헤더 타이틀 너비 넓히기 */
+  /* 헤더 타이틀 너비 제한 해제 */
   .page__hero--overlay .wrapper {
-    max-width: 90% !important; /* 너비를 화면의 90%까지 사용 */
+    max-width: 95% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  /* 제목 글자 크기 조정 (모바일 대응) */
   .page__title {
     font-size: 2.5em !important;
-    white-space: nowrap; /* 줄바꿈 방지 (화면이 너무 작으면 스크롤됨) */
+    line-height: 1.2;
+    white-space: nowrap; /* PC에서 줄바꿈 방지 */
   }
   @media (max-width: 768px) {
     .page__title {
-      white-space: normal; /* 모바일에서는 자연스럽게 줄바꿈 허용 */
+      white-space: normal; /* 모바일에서는 줄바꿈 허용 */
       font-size: 1.8em !important;
     }
+  }
+
+  /* 다운로드 버튼 그리드 스타일 */
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .download-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .doc-thumb {
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: transform 0.2s;
+  }
+  .doc-thumb:hover {
+    transform: translateY(-5px);
+  }
+  .doc-label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
   }
 </style>
 
@@ -141,42 +172,42 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 #### 프로젝트 자료 다운로드
 설계 및 심사 과정에서 작성한 기술 문서입니다.
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; margin-top: 30px; margin-bottom: 50px;">
-<div style="display: flex; flex-direction: column; align-items: center;">
-<a href="/assets/files/CanSat/PDR.pdf" target="_blank" style="text-decoration: none;">
-<img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-</a>
-<span style="margin-top: 10px; font-weight: bold; color: #555;">📕 PDR 자료</span>
+<div class="download-grid">
+  <div class="download-item">
+    <a href="/assets/files/CanSat/PDR.pdf" target="_blank">
+      <img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" class="doc-thumb">
+    </a>
+    <span class="doc-label">📕 PDR 자료</span>
+  </div>
+  <div class="download-item">
+    <a href="/assets/files/CanSat/CDR.pdf" target="_blank">
+      <img src="/assets/images/CanSat/thumb_cdr.png" alt="CDR 표지" class="doc-thumb">
+    </a>
+    <span class="doc-label">📘 CDR 자료</span>
+  </div>
+  <div class="download-item">
+    <a href="/assets/files/CanSat/EnvTest.pdf" target="_blank">
+      <img src="/assets/images/CanSat/thumb_env.png" alt="환경평가 표지" class="doc-thumb">
+    </a>
+    <span class="doc-label">📗 환경평가 자료</span>
+  </div>
+  <div class="download-item">
+    <a href="/assets/files/CanSat/PFR.pdf" target="_blank">
+      <img src="/assets/images/CanSat/thumb_pfr.png" alt="PFR 표지" class="doc-thumb">
+    </a>
+    <span class="doc-label">📙 PFR 자료</span>
+  </div>
+  <div class="download-item">
+    <a href="/assets/files/CanSat/Conference_Poster.pdf" target="_blank">
+      <img src="/assets/images/CanSat/thumb_poster.png" alt="포스터 미리보기" class="doc-thumb">
+    </a>
+    <span class="doc-label">📄 우주학술대회 포스터</span>
+  </div>
 </div>
-<div style="display: flex; flex-direction: column; align-items: center;">
-<a href="/assets/files/CanSat/CDR.pdf" target="_blank" style="text-decoration: none;">
-<img src="/assets/images/CanSat/thumb_cdr.png" alt="CDR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-</a>
-<span style="margin-top: 10px; font-weight: bold; color: #555;">📘 CDR 자료</span>
-</div>
-<div style="display: flex; flex-direction: column; align-items: center;">
-<a href="/assets/files/CanSat/EnvTest.pdf" target="_blank" style="text-decoration: none;">
-<img src="/assets/images/CanSat/thumb_env.png" alt="환경평가 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-</a>
-<span style="margin-top: 10px; font-weight: bold; color: #555;">📗 환경평가 자료</span>
-</div>
-<div style="display: flex; flex-direction: column; align-items: center;">
-<a href="/assets/files/CanSat/PFR.pdf" target="_blank" style="text-decoration: none;">
-<img src="/assets/images/CanSat/thumb_pfr.png" alt="PFR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-</a>
-<span style="margin-top: 10px; font-weight: bold; color: #555;">📙 PFR 자료</span>
-</div>
-<div style="display: flex; flex-direction: column; align-items: center;">
-<a href="/assets/files/CanSat/Conference_Poster.pdf" target="_blank" style="text-decoration: none;">
-<img src="/assets/images/CanSat/thumb_poster.png" alt="포스터 미리보기" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-</a>
-<span style="margin-top: 10px; font-weight: bold; color: #d9534f;">📄 우주학술대회 포스터</span>
-</div>
-</div>
+
 <br>
 <br>
 
-<br>
 ## Troubleshooting & Engineering Insights
 
 최종 비행(Flight) 미션은 절반의 성공과 절반의 실패를 남겼습니다. 하지만 이 과정에서 발생한 기계적, 전자적 결함을 분석하며 엔지니어로서 가장 많이 성장할 수 있었습니다.

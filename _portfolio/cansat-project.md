@@ -56,7 +56,10 @@ project_images:
   .page__title {
     font-size: 3.5em !important;        /* 제목 크기 더 키움 */
     line-height: 1.1;
-    margin-bottom: 30px !important;
+    margin-bottom: 20px !important;
+    margin-left: 0 !important;          /* 왼쪽 마진 제거 */
+    padding: 0 !important;              /* 패딩 제거 */
+    text-align: left !important;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* 배경이 밝아질 수 있으므로 그림자 강화 */
   }
 
@@ -65,10 +68,11 @@ project_images:
     font-size: 1.5em !important;
     max-width: 100% !important;         /* 너비 제한 해제 (한 줄로 길게) */
     width: 90%;                         /* 좌우 여백 약간 */
-    margin: 0 auto;                     /* 블록 자체는 중앙에 위치 */
+    margin: 0 !important;               /* [중요] 중앙 정렬(margin: 0 auto) 제거 */
+    padding: 0 !important;
     word-break: keep-all !important;    /* 단어 중간 끊김 방지 */
     white-space: pre-line !important;   /* [중요] YAML에서 엔터 친 그대로 줄바꿈 반영 */
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
     text-align: left;                 /* 텍스트는 중앙 정렬 (원치 않으면 left로 변경 가능) */
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
   }

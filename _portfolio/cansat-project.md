@@ -1,24 +1,24 @@
 ---
 title: "2024 AAS CanSat Competition"
 excerpt: "American Astronautical Society(AAS) 주관 캔위성 경연대회 하드웨어 설계 및 제작 프로젝트"
-layout: single # 테마 적용
-auther_profile: true # true: 왼쪽에 프로필 띄움
+layout: single
+author_profile: true       # [수정됨] auther -> author (이 오타 때문에 레이아웃이 깨졌습니다)
 header:
-  teaser: /assets/images/CanSat/b.gif  # [핵심] 카드에 보일 움짤/이미지 경로
-  overlay_image: /assets/images/CanSat/1.jpg # 상세 페이지 상단에 뜰 배경 이미지 (선택)
-  overlay_filter: 0.5 # 배경 이미지 어둡게 처리
+  teaser: /assets/images/CanSat/b.gif
+  overlay_image: /assets/images/CanSat/1.jpg
+  overlay_filter: 0.5
 toc: true
 toc_sticky: true
-classes: wide
-sidebar:
-  nav: "counts" # (선택사항) 왼쪽 메뉴
+classes: wide              # wide 적용
+# sidebar:                 # [주석 처리] 왼쪽 메뉴가 굳이 필요 없다면 주석 처리하는 것이 공간 확보에 좋습니다.
+#   nav: "counts"
 categories:
   - Project
 tags:
   - Aerospace
   - Satellite
   - HW_design
-last_modified_at: 2026-01-30
+last_modified_at: 2026-02-08
 project_images:
   - /assets/images/CanSat/1.jpg
   - /assets/images/CanSat/2.png
@@ -45,7 +45,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 저는 **하드웨어 팀(Mechanical Team)** 소속으로 캔위성의 구조 설계, 메커니즘 구현, 그리고 제작을 전담했습니다.
 
-###  2024 Mission Profile
+### 2024 Mission Profile
 이번 대회의 핵심 미션은 **대기권 재진입 시뮬레이션**입니다.
 
 <figure style="text-align: center; margin: 20px 0;">
@@ -63,19 +63,19 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 <br>
 
-##  프로젝트 수행 기간 및 일정
+## 프로젝트 수행 기간 및 일정
 **2023.09 - 2024.06 (약 10개월)**
 
-|   시기    |     단계     | 주요 내용                                                                                                                                                                                                                                                              |
+|   시기    |     단계     | 주요 내용                                                                                                                                                                                                                                                          |
 | :-----: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2024.03 |  **PDR**   | 예비 설계 검토 (Preliminary Design Review) 발표                                                                                                                                                                                                                            |
-| 2024.04 |  **CDR**   | 상세 설계 검토 (Critical Design Review) 발표                                                                                                                                                                                                                               |
-| 2024.05 |  **Test**  | 환경 평가 자료 제출 및 최종 기능 점검                                                                                                                                                                                                                                             |
+| 2024.03 |  **PDR** | 예비 설계 검토 (Preliminary Design Review) 발표                                                                                                                                                                                                                    |
+| 2024.04 |  **CDR** | 상세 설계 검토 (Critical Design Review) 발표                                                                                                                                                                                                                       |
+| 2024.05 |  **Test** | 환경 평가 자료 제출 및 최종 기능 점검                                                                                                                                                                                                                              |
 | 2024.06 | **Flight** | **Competition (Monterey, VA)** <br> - Flight Readiness Review (6/7) <br> - Launch Operation @ [Jack Mountain Village](https://www.google.com/maps/search/?api=1&query=3003+Jackson+River+Rd,+Monterey,+VA+24465) (6/8) <br> - Post Flight Review (6/9)<br><br><br> |
 
 <br>
 
-##  주요 수행 업무 (Hardware Design)
+## 주요 수행 업무 (Hardware Design)
 
 ### 1. 미션 메커니즘 설계
 미션 시나리오의 성공적인 수행을 위해 초기 개념 설계를 주도했습니다. 특히 Heat Shield의 전개 및 분리 시퀀스, 각 모듈(배터리, 센서, 페이로드)의 최적 배치를 통한 무게 중심(CG) 설정을 수행했습니다.
@@ -86,22 +86,27 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 공기 저항을 극대화하기 위해 두 가지 방식을 비교 분석했습니다.
 * **A안 (Origami):** 종이접기 방식. 공간 효율은 좋으나 고토크 서보모터가 필요하고, 전개 시 회전 발생으로 인한 불안정성 및 중량 초과 위험이 있어 배제했습니다.
 * **B안 (Umbrella Type - 채택):** 우산형 전개 방식. 스프링의 탄성력을 이용한 **Passive Deployment** 방식을 적용했습니다. 로켓 사출 즉시 별도의 전력 소모 없이 신속하게 전개되며, 구조적으로 간단하여 **신뢰성(Reliability)**과 **경량화** 측면에서 유리하다고 판단했습니다.
+
 #### **Egg Container**
 깨지기 쉬운 달걀(페이로드)을 보호하기 위해 다중 충격 흡수 구조를 적용했습니다.
 * **Floating Structure:** 고무 댐퍼를 사용해 컨테이너를 위성 본체와 이격(Floating)시켜 1차 충격을 감쇠했습니다.
 * **Internal Volume:** 컨테이너 내부 용적을 최대화하여 완충재의 밀도를 높일 수 있도록 설계했습니다.
+
 #### **Aerodynamic Fins (Stability Control)**
 낙하 중 카메라의 시야각(FOV) 확보를 위해 위성의 회전(Spin) 제어가 필수적이었습니다.
 * **Dual-Phase Fin:** Heat Shield 전개 시에는 Heat shield 전방의 3개 Fin이, 분리 후에는 낙하산 모듈의 앞의 2개 Fin이 순차적으로 작동하여 전 구간에서 공력 안정성을 확보했습니다.
+
 #### **Nose Cone & Fairing**
 * **외부 노즈콘 (Fairing Nose Cone):** Von Karman Ogive 형상을 기반으로 설계하여 로켓 상승 시 항력을 최소화했습니다.
 * **내부 노즈콘(Satellite Nose Cone):** 내부 안테나, 센서, 카메라 모듈을 외부 충격으로부터 보호하는 하우징을 설계했습니다.
+
 ### 3. 하드웨어 통합 및 제작 (Integration)
 설계된 모델을 3D 프린팅 및 가공을 통해 실제작했습니다. 제작 과정에서 **전체 중량 제한(900g)**을 준수하기 위해 설계를 단순화 하고, 내부 채움(Infill)을 조절하는 등 설계를 경량화 방향으로 최적화했습니다.
 
 <br>
 
 ## 프로젝트 결과
+
 #### 대회 성과
 * **종합 15위 달성** (Top 15 / 40 Global Teams)
 * 총점: **89.1056%**
@@ -181,20 +186,18 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 * **Issue 1: 낙하산 조기 전개 및 구조적 파손**
 
   **문제 상황:** 로켓에서 위성 사출 시 폭약의 충격을 견디지 못하고 낙하산 구조물이 파손되었습니다. 이로 인해 낙하산이 예정된 고도보다 일찍 전개되었으며, 완전한 낙하산 전개에 실패했습니다.
-
-  * **원인 분석 (Root Cause)**
+  * **원인 분석 (Root Cause):**
     1. **구조 설계의 문제:** 위성의 중량 제한(900g)을 준수하기 위해 구조물을 경량화하는 과정에서 낙하산 모듈의 강성이 약해져 충격에 취약해졌습니다.
     2. **소재 선정의 한계:** PLA/ABS 등 일반적인 3D 프린팅 소재는 비강도(Specific Strength)가 낮아 순간적인 발사 충격을 견디기에 부족했습니다.
-  * **기술적 개선안 (Solution)**
+  * **기술적 개선안 (Solution):**
     * **Advanced Materials:** 하중을 집중적으로 받는 주요 부품은 **Carbon Composite**나 **발사 나무(Balsa Wood)**와 같이 가볍지만 강성이 뛰어난 소재로 변경하여 내구성을 확보해야 합니다.
 
 * **Issue 2: 통신 두절 (Telemetry Lost)**
 
   **문제 상황:** 발사 직후 지상국(Ground Station)으로 들어오는 패킷이 끊겼으며, 비행 데이터를 실시간으로 확인할 수 없었습니다.
-
-  * **원인 분석 (Root Cause)**
+  * **원인 분석 (Root Cause):**
     1. **Antenna Alignment:** 지향성 패널 안테나를 사용했으나, 육안으로 빠르게 움직이는 캔위성을 정확히 조준(Aiming)하는 데 실패했습니다.
-  * **기술적 개선안 (Solution)**
+  * **기술적 개선안 (Solution):**
     * **Antenna Scope:** 안테나에 조준경(Scope) 부착하여 시각적 추적의 정확도를 높이고, 지향각 오차를 최소화합니다.
 
 ### 3. Lessons Learned

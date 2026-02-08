@@ -1,6 +1,8 @@
 ---
 title: "2024 AAS CanSat Competition"
-excerpt: "American Astronautical Society(AAS) 주관 캔위성 경연대회 하드웨어 설계 및 제작 프로젝트"
+excerpt: |
+  American Astronautical Society(AAS) 주관
+  캔위성 경연대회 하드웨어 설계 및 제작 프로젝트
 layout: single
 author_profile: true
 header:
@@ -38,47 +40,55 @@ project_images:
 ---
 
 <style>
-  /* 1. 배경 이미지 넓게 보이기 설정 */
+  /* 1. 배경 이미지 높이 대폭 확장 (로켓 전체 보기) */
   .page__hero--overlay {
-    min-height: 600px !important;       /* 헤더 높이를 강제로 600px로 늘림 (숫자 조절 가능) */
+    min-height: 80vh !important;       /* 화면 높이의 80%까지 늘려서 세로 사진 확보 */
+    align-items: center !important;     /* 텍스트 세로 중앙 정렬 */
     display: flex !important;
-    background-position: Top center !important; /* 이미지 위치 조절 (필요시 center center로 변경) */
+    background-position: center bottom !important; /* 이미지 아래쪽(발사대) 기준 정렬 */
+    background-size: cover !important;
   }
 
-  /* 2. 헤더 타이틀 너비 제한 해제 */
+  /* 2. 헤더 타이틀 스타일 */
   .page__hero--overlay .wrapper {
     max-width: 95% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
   }
   .page__title {
-    font-size: 3em !important;          /* 제목 크기 키움 */
-    line-height: 1.2;
-    margin-bottom: 20px !important;
+    font-size: 3.5em !important;        /* 제목 크기 더 키움 */
+    line-height: 1.1;
+    margin-bottom: 30px !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* 배경이 밝아질 수 있으므로 그림자 강화 */
   }
 
-  /* 3. 설명글(excerpt) 단어 끊김 방지 */
+  /* 3. 설명글(excerpt) 스타일 개선 - 핵심 */
   .page__lead {
-    font-size: 1.5em !important;        /* 설명글 크기 키움 */
-    word-break: keep-all !important;    /* [중요] 한글 단어 중간에서 줄바꿈 금지 */
+    font-size: 1.5em !important;
+    max-width: 100% !important;         /* 너비 제한 해제 (한 줄로 길게) */
+    width: 90%;                         /* 좌우 여백 약간 */
+    margin: 0 auto;                     /* 블록 자체는 중앙에 위치 */
+    word-break: keep-all !important;    /* 단어 중간 끊김 방지 */
+    white-space: pre-line !important;   /* [중요] YAML에서 엔터 친 그대로 줄바꿈 반영 */
     line-height: 1.6 !important;
-    max-width: 800px;                   /* 설명글이 너무 퍼지지 않게 중앙 정렬 느낌 유지 */
-    margin: 0 auto;                     /* 중앙 정렬 */
+    text-align: center;                 /* 텍스트는 중앙 정렬 (원치 않으면 left로 변경 가능) */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
   }
 
+  /* 모바일 화면 조정 */
   @media (max-width: 768px) {
     .page__hero--overlay {
-      min-height: 400px !important;     /* 모바일에서는 높이를 조금 줄임 */
+      min-height: 50vh !important;      /* 모바일에서는 적당히 줄임 */
     }
     .page__title {
       font-size: 2em !important;
     }
     .page__lead {
       font-size: 1.1em !important;
+      white-space: normal !important;   /* 모바일에서는 자동 줄바꿈 허용 */
     }
   }
 
-  /* 다운로드 버튼 그리드 스타일 */
+  /* 다운로드 버튼 그리드 */
   .download-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

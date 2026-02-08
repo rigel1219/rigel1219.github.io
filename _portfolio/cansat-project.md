@@ -2,16 +2,14 @@
 title: "2024 AAS CanSat Competition"
 excerpt: "American Astronautical Society(AAS) 주관 캔위성 경연대회 하드웨어 설계 및 제작 프로젝트"
 layout: single
-author_profile: true       # [수정됨] auther -> author (이 오타 때문에 레이아웃이 깨졌습니다)
+author_profile: true
 header:
   teaser: /assets/images/CanSat/b.gif
   overlay_image: /assets/images/CanSat/1.jpg
   overlay_filter: 0.5
 toc: true
 toc_sticky: true
-classes: wide              # wide 적용
-# sidebar:                 # [주석 처리] 왼쪽 메뉴가 굳이 필요 없다면 주석 처리하는 것이 공간 확보에 좋습니다.
-#   nav: "counts"
+classes: wide
 categories:
   - Project
 tags:
@@ -38,6 +36,26 @@ project_images:
   - /assets/images/CanSat/14.jpg
   - /assets/images/CanSat/15.jpg
 ---
+
+<style>
+  /* 헤더 타이틀 너비 넓히기 */
+  .page__hero--overlay .wrapper {
+    max-width: 90% !important; /* 너비를 화면의 90%까지 사용 */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* 제목 글자 크기 조정 (모바일 대응) */
+  .page__title {
+    font-size: 2.5em !important;
+    white-space: nowrap; /* 줄바꿈 방지 (화면이 너무 작으면 스크롤됨) */
+  }
+  @media (max-width: 768px) {
+    .page__title {
+      white-space: normal; /* 모바일에서는 자연스럽게 줄바꿈 허용 */
+      font-size: 1.8em !important;
+    }
+  }
+</style>
 
 ## 프로젝트 개요
 
@@ -124,50 +142,39 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 설계 및 심사 과정에서 작성한 기술 문서입니다.
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; margin-top: 30px; margin-bottom: 50px;">
-
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="/assets/files/CanSat/PDR.pdf" target="_blank" style="text-decoration: none;">
-      <img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" 
-           style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-    </a>
-    <span style="margin-top: 10px; font-weight: bold; color: #555;">📕 PDR 자료</span>
-  </div>
-
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="/assets/files/CanSat/CDR.pdf" target="_blank" style="text-decoration: none;">
-      <img src="/assets/images/CanSat/thumb_cdr.png" alt="CDR 표지" 
-           style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-    </a>
-    <span style="margin-top: 10px; font-weight: bold; color: #555;">📘 CDR 자료</span>
-  </div>
-
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="/assets/files/CanSat/EnvTest.pdf" target="_blank" style="text-decoration: none;">
-      <img src="/assets/images/CanSat/thumb_env.png" alt="환경평가 표지" 
-           style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-    </a>
-    <span style="margin-top: 10px; font-weight: bold; color: #555;">📗 환경평가 자료</span>
-  </div>
-
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="/assets/files/CanSat/PFR.pdf" target="_blank" style="text-decoration: none;">
-      <img src="/assets/images/CanSat/thumb_pfr.png" alt="PFR 표지" 
-           style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-    </a>
-    <span style="margin-top: 10px; font-weight: bold; color: #555;">📙 PFR 자료</span>
-  </div>
-
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="/assets/files/CanSat/Conference_Poster.pdf" target="_blank" style="text-decoration: none;">
-      <img src="/assets/images/CanSat/thumb_poster.png" alt="포스터 미리보기" 
-           style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
-    </a>
-    <span style="margin-top: 10px; font-weight: bold; color: #d9534f;">📄 우주학술대회 포스터</span>
-  </div>
-
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="/assets/files/CanSat/PDR.pdf" target="_blank" style="text-decoration: none;">
+<img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
+</a>
+<span style="margin-top: 10px; font-weight: bold; color: #555;">📕 PDR 자료</span>
 </div>
-<br>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="/assets/files/CanSat/CDR.pdf" target="_blank" style="text-decoration: none;">
+<img src="/assets/images/CanSat/thumb_cdr.png" alt="CDR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
+</a>
+<span style="margin-top: 10px; font-weight: bold; color: #555;">📘 CDR 자료</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="/assets/files/CanSat/EnvTest.pdf" target="_blank" style="text-decoration: none;">
+<img src="/assets/images/CanSat/thumb_env.png" alt="환경평가 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
+</a>
+<span style="margin-top: 10px; font-weight: bold; color: #555;">📗 환경평가 자료</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="/assets/files/CanSat/PFR.pdf" target="_blank" style="text-decoration: none;">
+<img src="/assets/images/CanSat/thumb_pfr.png" alt="PFR 표지" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
+</a>
+<span style="margin-top: 10px; font-weight: bold; color: #555;">📙 PFR 자료</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="/assets/files/CanSat/Conference_Poster.pdf" target="_blank" style="text-decoration: none;">
+<img src="/assets/images/CanSat/thumb_poster.png" alt="포스터 미리보기" style="width: 100%; max-width: 200px; border: 1px solid #ddd; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); border-radius: 5px; transition: transform 0.2s;">
+</a>
+<span style="margin-top: 10px; font-weight: bold; color: #d9534f;">📄 우주학술대회 포스터</span>
+</div>
+</div>
 
+<br>
 ## Troubleshooting & Engineering Insights
 
 최종 비행(Flight) 미션은 절반의 성공과 절반의 실패를 남겼습니다. 하지만 이 과정에서 발생한 기계적, 전자적 결함을 분석하며 엔지니어로서 가장 많이 성장할 수 있었습니다.
@@ -184,7 +191,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 가장 치명적이었던 두 가지 문제에 대한 **원인 분석**과 **개선책**입니다.
 
 * **Issue 1: 낙하산 조기 전개 및 구조적 파손**
-
+  
   **문제 상황:** 로켓에서 위성 사출 시 폭약의 충격을 견디지 못하고 낙하산 구조물이 파손되었습니다. 이로 인해 낙하산이 예정된 고도보다 일찍 전개되었으며, 완전한 낙하산 전개에 실패했습니다.
   * **원인 분석 (Root Cause):**
     1. **구조 설계의 문제:** 위성의 중량 제한(900g)을 준수하기 위해 구조물을 경량화하는 과정에서 낙하산 모듈의 강성이 약해져 충격에 취약해졌습니다.
@@ -193,7 +200,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
     * **Advanced Materials:** 하중을 집중적으로 받는 주요 부품은 **Carbon Composite**나 **발사 나무(Balsa Wood)**와 같이 가볍지만 강성이 뛰어난 소재로 변경하여 내구성을 확보해야 합니다.
 
 * **Issue 2: 통신 두절 (Telemetry Lost)**
-
+  
   **문제 상황:** 발사 직후 지상국(Ground Station)으로 들어오는 패킷이 끊겼으며, 비행 데이터를 실시간으로 확인할 수 없었습니다.
   * **원인 분석 (Root Cause):**
     1. **Antenna Alignment:** 지향성 패널 안테나를 사용했으나, 육안으로 빠르게 움직이는 캔위성을 정확히 조준(Aiming)하는 데 실패했습니다.

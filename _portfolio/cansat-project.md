@@ -210,11 +210,11 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
   <div style="flex: 1; min-width: 300px;">
     <img src="/assets/images/CanSat/c.gif" alt="위성 촬영 영상 1" style="width: 100%; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
-    <p style="text-align: center; color: gray; font-size: 0.9em; margin-top: 5px;">[영상 1] 임무 수행 모습</p>
+    <p style="text-align: center; color: gray; font-size: 0.9em; margin-top: 5px;">[영상 1] 수평 방향</p>
   </div>
   <div style="flex: 1; min-width: 300px;">
     <img src="/assets/images/CanSat/d.gif" alt="위성 촬영 영상 2" style="width: 100%; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
-    <p style="text-align: center; color: gray; font-size: 0.9em; margin-top: 5px;">[영상 2] 착륙 과정</p>
+    <p style="text-align: center; color: gray; font-size: 0.9em; margin-top: 5px;">[영상 2] 수직 방향</p>
   </div>
 </div>
 

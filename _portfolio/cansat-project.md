@@ -225,7 +225,7 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 <div class="download-grid">
   <div class="download-item">
-    <a href="/assets/files/CanSat/Cansat2024_2036_pdr.pdf.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Cansat2024_2036_pdr.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" class="doc-thumb">
     </a>
     <span class="doc-label">📕 PDR 자료</span>

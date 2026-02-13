@@ -225,31 +225,31 @@ American Astronautical Society(AAS)와 NASA 등이 주관하는 국제 캔위성
 
 <div class="download-grid">
   <div class="download-item">
-    <a href="/assets/files/CanSat/PDR.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Cansat2024_2036_pdr.pdf.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_pdr.png" alt="PDR 표지" class="doc-thumb">
     </a>
     <span class="doc-label">📕 PDR 자료</span>
   </div>
   <div class="download-item">
-    <a href="/assets/files/CanSat/CDR.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Cansat2024_2036_cdr.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_cdr.png" alt="CDR 표지" class="doc-thumb">
     </a>
     <span class="doc-label">📘 CDR 자료</span>
   </div>
   <div class="download-item">
-    <a href="/assets/files/CanSat/EnvTest.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Cansat2024_2036_env.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_env.png" alt="환경평가 표지" class="doc-thumb">
     </a>
     <span class="doc-label">📗 환경평가 자료</span>
   </div>
   <div class="download-item">
-    <a href="/assets/files/CanSat/PFR.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Cansat2024_2036_pfr.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_pfr.png" alt="PFR 표지" class="doc-thumb">
     </a>
     <span class="doc-label">📙 PFR 자료</span>
   </div>
   <div class="download-item">
-    <a href="/assets/files/CanSat/Conference_Poster.pdf" target="_blank">
+    <a href="/assets/files/CanSat/Poster.pdf" target="_blank">
       <img src="/assets/images/CanSat/thumb_poster.png" alt="포스터 미리보기" class="doc-thumb">
     </a>
     <span class="doc-label">📄 우주학술대회 포스터</span>
